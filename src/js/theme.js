@@ -11,12 +11,13 @@ const Theme = {
 const toggleSwitch = document.getElementById('theme-switch-toggle');
 const currentTheme = localStorage.getItem('theme');
 
-if (toggleSwitch.checked = true) {
+if (currentTheme) {
+    document.body.classList.add(currentTheme);
+    if (currentTheme === Theme.DARK) {
+    toggleSwitch.checked = true;
     document.body.classList.add(Theme.DARK);
+    }
 }
-else toggleSwitch.checked = false; {
-    document.body.classList.remove(Theme.LIGHT);
-}    
 
 toggleSwitch.addEventListener('change', changeTheme);
 
