@@ -11,19 +11,19 @@ const Theme = {
 const toggleSwitch = document.getElementById('theme-switch-toggle');
 const currentTheme = localStorage.getItem('theme');
 
-if (currentTheme) {
-     document.documentElement.setAttribute('theme', currentTheme);
-    
-    if (currentTheme === Theme.DARK) {
-        toggleSwitch.checked = true;
-    }
-}  
+if (toggleSwitch.checked = true) {
+    document.body.classList.add(Theme.DARK);
+}
+else toggleSwitch.checked = false; {
+    document.body.classList.remove(Theme.LIGHT);
+}    
 
 toggleSwitch.addEventListener('change', changeTheme);
 
 function changeTheme(evt) {
     if (evt.target.checked) {
         document.body.classList.add(Theme.DARK);
+        document.body.classList.remove(Theme.LIGHT);
         localStorage.setItem('theme', Theme.DARK);          
     } else {
        document.body.classList.remove(Theme.DARK);
